@@ -8,30 +8,15 @@
         <title>Java Web - laboratorium 4</title>
     </head>
     <body>
-        <h1>Session counter</h1>
+    
         
-        <%
-         Integer hitsCount = (Integer)application.getAttribute("hitCounter");
-         if( hitsCount ==null || hitsCount == 0 ) {
-            
-            out.println("Welcome to my website!");
-            hitsCount = 1;
-         } else {
-            
-            out.println("Welcome back to my website!");
-            hitsCount += 1;
-         }
-         application.setAttribute("hitCounter", hitsCount);
-      %>
-      
-         <p>Total number of visits: <%= hitsCount%></p>
         
         <h1>Witaj, <c:out value="${p1.firstName} ${p1.lastName}"/>!</h1>
-        <h1>mail to: <c:out value="${p1.email}"/>!</h1>
+        
         <!-- W c:out wartosc zostanie odczytana jako ciag znakow -->
         
         <h1>Witaj, ${p1.firstName} ${p1.lastName}!</h1>
-        <h1>mail to: ${p1.email}!</h1>
+        <a href="mailto:${p1.email}">${p1.email}</a>
         <!--Tutaj wyrazenie zostanie wykonane jako kod html lub js -->
         
         <c:forEach items="${dniTygodnia}" var="dzien">
